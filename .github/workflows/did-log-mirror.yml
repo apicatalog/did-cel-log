@@ -32,7 +32,7 @@ jobs:
           ID=${DID#did:cel:}
           ID=${ID%%\?*}          
           STORAGE=${DID#*storage=}
-          RESOLVED_URL="$STORAGE/$ID"
+          RESOLVED_URL="$STORAGE$ID"
           echo "Syncing $DID -> $ID"
           curl -sL "$RESOLVED_URL" -o "$DEST_DIR/$ID"
         done < "$SOURCES_FILE"
